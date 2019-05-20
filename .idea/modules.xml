@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/meixun-rpc.iml" filepath="$PROJECT_DIR$/meixun-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meixun-rpc-client/meixun-rpc-client.iml" filepath="$PROJECT_DIR$/meixun-rpc-client/meixun-rpc-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meixun-rpc-server-api/meixun-rpc-server-api.iml" filepath="$PROJECT_DIR$/meixun-rpc-server-api/meixun-rpc-server-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meixun-rpc-server-impl/meixun-rpc-server-impl.iml" filepath="$PROJECT_DIR$/meixun-rpc-server-impl/meixun-rpc-server-impl.iml" />
     </modules>
   </component>
 </project>

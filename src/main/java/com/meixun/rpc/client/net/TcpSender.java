@@ -26,9 +26,7 @@ public class TcpSender {
     }
 
     public Object send(RpcRequest rpcRequest) {
-        Socket socket = null;
-        try {
-            socket = newSocket();
+        Socket socket = newSocket();
             try {
                 ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
                 outputStream.writeObject(rpcRequest);
@@ -40,8 +38,7 @@ public class TcpSender {
                 return result;
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException("发起远程调用异常！",e);
-            }
-        } finally {
+            } finally {
             if (socket != null) {
                 try {
                     socket.close();

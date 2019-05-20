@@ -7,10 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="meixun-rpc" />
+        <module name="meixun-rpc-client" />
+        <module name="meixun-rpc-server-api" />
+        <module name="meixun-rpc-server-impl" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="meixun-rpc" target="1.7" />
+      <module name="meixun-rpc-client" target="1.7" />
+      <module name="meixun-rpc-server-api" target="1.7" />
+      <module name="meixun-rpc-server-impl" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

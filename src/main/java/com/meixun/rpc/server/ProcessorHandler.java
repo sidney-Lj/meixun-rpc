@@ -8,14 +8,18 @@ import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Socket;
+import java.util.Map;
 
 public class ProcessorHandler implements Runnable{
 
     private Socket socket;
 
+    private Map<String,Object> handlerMap;
 
-    public ProcessorHandler(Socket socket) {
+
+    public ProcessorHandler(Socket socket, Map<String,Object> handlerMap) {
         this.socket = socket;
+        this.handlerMap = handlerMap;
     }
 
     @Override
@@ -49,7 +53,7 @@ public class ProcessorHandler implements Runnable{
         Class[] paramTypes = rpcRequest.getParamTypes();
         Object[] paramValues = rpcRequest.getParamValues();
         //从Map中获得Service（根据客户端请求的ServiceName，获得相应的服务），依旧是通过反射发起调用
-        Object service = (Class.forName(rpcRequest.getClassName())).newInstance();
+        Object service = handlerMap.get(rpcRequest.getClassName());
         Method method = service.getClass().getMethod(rpcRequest.getMethodName(), paramTypes);
         return method.invoke(service, paramValues);
     }

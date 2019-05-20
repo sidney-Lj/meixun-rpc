@@ -4,6 +4,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/meixun-rpc-server-api/pom.xml" />
+        <option value="$PROJECT_DIR$/meixun-rpc-server-impl/pom.xml" />
+        <option value="$PROJECT_DIR$/meixun-rpc-client/pom.xml" />
       </list>
     </option>
   </component>

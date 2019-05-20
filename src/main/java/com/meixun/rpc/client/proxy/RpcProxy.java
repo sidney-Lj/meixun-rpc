@@ -9,18 +9,17 @@ import java.lang.reflect.Proxy;
 
 public class RpcProxy implements InvocationHandler {
 
-    private Class target;
-    public Object bind(Class target) {
-        this.target = target;
-        return Proxy.newProxyInstance(target.getClassLoader(), target.getInterfaces(), this);
+    private Class iface;
+    public Object bind(Class iface) {
+        this.iface = iface;
+        return Proxy.newProxyInstance(iface.getClassLoader(), new Class [] {iface}, this);
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("before method excute!");
-        method.invoke(target, args);
         RpcRequest rpcRequest = new RpcRequest();
-        rpcRequest.setClassName(target.getName());
+        rpcRequest.setClassName(iface.getName());
         rpcRequest.setMethodName(method.getName());
         rpcRequest.setParamTypes(method.getParameterTypes());
         rpcRequest.setParamValues(args);
